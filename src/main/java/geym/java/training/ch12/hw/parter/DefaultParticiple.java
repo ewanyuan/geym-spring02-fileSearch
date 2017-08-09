@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javafx.scene.input.InputMethodTextRun;
 import org.springframework.stereotype.Component;
 import org.wltea.analyzer.IKSegmentation;
 import org.wltea.analyzer.Lexeme;
@@ -19,7 +20,7 @@ public class DefaultParticiple implements IParticiple {
 
     public DefaultParticiple() {
         try {
-            InputStream inStream = DefaultParticiple.class.getResourceAsStream("ignore.txt");
+            InputStream inStream = DefaultParticiple.class.getResourceAsStream("/ignore.txt");
             BufferedReader reader = new BufferedReader(new InputStreamReader(inStream));
             int c = 0;
             while ((c = reader.read()) != -1) {

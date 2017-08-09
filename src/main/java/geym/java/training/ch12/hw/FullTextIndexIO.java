@@ -1,6 +1,7 @@
 package geym.java.training.ch12.hw;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -84,7 +85,7 @@ public class FullTextIndexIO implements IIndexIO {
         ParticipleDao participleDao = session.getMapper(ParticipleDao.class);
         List<String> findStrings = parter.split(findString);
         try {
-            Set<Integer> idList = null;
+            Set<Integer> idList = new HashSet<Integer>();
             for (String str : findStrings) {
                 if (idList == null ) {
                     idList = participleDao.find(str);
