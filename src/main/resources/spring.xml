@@ -18,19 +18,19 @@
     <context:component-scan base-package="geym.java.training.ch12" /> 
     
     <bean id="filequeue" class="java.util.concurrent.ConcurrentLinkedQueue" />
-    <bean id="indexIO" class="geym.java.training.ch12.hw.FileIndexIO">
-     <property name="indexFilePath" value="./target/filelist.txt" />
-    </bean>
+    <!--<bean id="indexIO" class="geym.java.training.ch12.hw.FileIndexIO">-->
+     <!--&lt;!&ndash;<property name="indexFilePath" value="./target/filelist.txt" />&ndash;&gt;-->
+    <!--</bean>-->
         
 	<bean id="fileIndexTask" class="geym.java.training.ch12.hw.FileIndexTask">
-        <property name="dirname" value="E:\\txt" />
+        <!--<property name="dirname" value="E:\\txt" />-->
         <property name="fileQueue" ref="filequeue" />
-        <property name="indexIO" ref="dbIndexIO" />
+        <!--<property name="indexIO" ref="dbIndexIO" />-->
 	</bean>
 	
-	<bean id="cliHandler" class="geym.java.training.ch12.hw.CliHandler">
-	   <property name="indexIO" ref="dbIndexIO" />
-	</bean>
+	<!--<bean id="cliHandler" class="geym.java.training.ch12.hw.CliHandler">-->
+	   <!--&lt;!&ndash;<property name="indexIO" ref="dbIndexIO" />&ndash;&gt;-->
+	<!--</bean>-->
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />

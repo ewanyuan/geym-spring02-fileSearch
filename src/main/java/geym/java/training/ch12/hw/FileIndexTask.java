@@ -1,5 +1,8 @@
 package geym.java.training.ch12.hw;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+
 import java.io.File;
 import java.util.List;
 import java.util.Queue;
@@ -9,9 +12,15 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 public class FileIndexTask implements IFileIndex {
+    @Value("E:\\txt")
     private String dirname;
     private Queue<File> fileQueue;
+
     private IIndexIO indexIO;
+    @Autowired
+    public FileIndexTask(IIndexIO indexIO) {
+        this.indexIO = indexIO;
+    }
     private final ForkJoinPool forkJoinPool = new ForkJoinPool();
 
     public String getDirname() {

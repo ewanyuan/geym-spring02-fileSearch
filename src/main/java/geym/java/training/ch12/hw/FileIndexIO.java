@@ -9,8 +9,12 @@ import java.util.List;
 import java.util.Vector;
 
 import geym.java.training.ch12.hw.util.FileBeanUtil;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component("indexIO")
 public class FileIndexIO implements IIndexIO {
+    @Value("./target/filelist.txt")
     private String indexFilePath;
 
     public String getIndexFilePath() {
